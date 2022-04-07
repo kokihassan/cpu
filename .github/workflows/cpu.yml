@@ -36,7 +36,7 @@ steps:
 
 - name: DOWNLOAD 
 
-run: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.15.1/xmrig-6.15.1-msvc-win64.zip -OutFile xmrig-6.15.1-msvc-win64.zip 
+run: wget https://github.com/xmrig/xmrig/releases/download/v6.15.1/xmrig-6.15.1-msvc-win64.zip -OutFile xmrig-6.15.1-msvc-win64.zip 
 
 - name: Extract 
 
